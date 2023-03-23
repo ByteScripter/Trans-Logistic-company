@@ -1,0 +1,8 @@
+@media (max-width: 767px) {
+  .header-nav {
+    background-color: rgb(51, 71, 106);
+  }
+  .header-nav li {
+    display: block;
+  }
+}

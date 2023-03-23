@@ -1,0 +1,78 @@
+@media (max-width: 767px) {
+	.heder-wrap {
+		height: 40px;
+		padding: 0;
+	}
+
+	.header-logo {
+		padding-left: 10px;
+	}
+	.header-nav {
+		position: relative;
+		height: 40px;
+		//background-color: rgb(51, 71, 106);
+
+		& ul {
+			width: 100vw;
+			height: 60vh;
+			padding-top: 9px;
+			text-align: right;
+
+			position: absolute;
+			top: 100%;
+			right: 0;
+
+			background-color: rgb(53, 50, 50);
+		}
+
+		& li {
+			display: block;
+			margin-left: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+	.header-link {
+		@include font(1em, 300, $color-width);
+		display: block;
+		padding: 20px 10px 19px;
+	}
+
+	.square-burger {
+		position: relative;
+		width: 40px;
+		height: 40px;
+		margin-right: 10px;
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: 2px;
+
+			position: absolute;
+			top: 19px;
+			left: 0;
+			background-color: #fff;
+		}
+	}
+
+	.square-burger__burger-menu {
+		&::before,
+		&::after {
+			content: "";
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			left: 0;
+
+			background-color: #fff;
+		}
+
+		&::before {
+			top: 9px;
+		}
+		&::after {
+			bottom: 9px;
+		}
+	}
+}

@@ -1,0 +1,79 @@
+@import "./null/nullstyle.scss";
+
+//font PT Sans____________________
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+//font Lato____________________
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+//variable____________________
+@import "./variable.scss";
+
+//mixins____________________
+@import "./mixins.scss";
+
+html {
+	@include font(15px, 300, $color-width);
+}
+
+body {
+	@include font(1rem, 300, $color-main-text);
+}
+
+/*=============header=============*/
+.header {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+
+	background-color: rgba(0, 0, 0, 0.479);
+}
+
+//central container
+.container {
+	max-width: 1300px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.heder-wrap {
+	display: flex;
+	height: 80px;
+	padding: 0 30px;
+
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header-nav {
+	& li {
+		display: inline;
+		margin-left: 1em;
+	}
+}
+
+.header-link {
+	@include font(1em, 300, $color-width);
+	padding: 2em 1em;
+}
+
+.link-active {
+	background-color: $color-main;
+}
+
+.burger-menu {
+	display: none;
+}
+
+/*=============intro=============*/
+.intro {
+	width: 100%;
+}
+
+.intro-background {
+	width: 100%;
+	margin: 0 auto;
+	object-fit: cover;
+}
+
+@import "./media.scss";
