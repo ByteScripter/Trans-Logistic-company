@@ -1,3 +1,4 @@
+/*=============import files=============*/
 @import "./null/nullstyle.scss";
 
 //font PT Sans____________________
@@ -11,6 +12,8 @@
 
 //mixins____________________
 @import "./mixins.scss";
+
+//________________/import files________________
 
 html {
 	@include font(15px, 300, $color-width);
@@ -64,12 +67,112 @@ body {
 /*=============intro=============*/
 .intro {
 	width: 100%;
+	height: 600px;
+
+	background: url(../img/intro-bg.jpg) no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 .intro-background {
 	width: 100%;
 	margin: 0 auto;
 	object-fit: cover;
+}
+
+.intro__wraper {
+	display: flex;
+	align-items: end;
+
+	width: 100%;
+	height: 600px;
+
+	//background-color: rgba(88, 25, 25, 0.829);
+}
+
+.intro-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	width: 1300px;
+	height: auto;
+
+	//background-color: #275017ce;
+}
+
+//________________request-form________________
+.request {
+	@include font(1rem, 300, $color-width);
+	max-width: 400px;
+
+	overflow: hidden;
+	border-radius: 0.333em;
+	background-color: $color-main;
+}
+
+.request__header {
+	padding: 20px 30px;
+	margin-bottom: 25px;
+
+	background-color: #033fc9;
+}
+
+.request__title {
+	@include font(2em, 900, $color-width);
+}
+.request-form {
+	max-width: 400px;
+	margin: 0 30px;
+	padding: 0;
+}
+
+.request__container {
+	width: 100%;
+}
+
+.request-form__items {
+	display: flex;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+.request-form__icons {
+	max-width: 15px;
+	max-height: 15px;
+
+	margin-top: 8.25px;
+	margin-bottom: 8.25px;
+	margin-left: 17px;
+	margin-right: 15px;
+}
+
+.request-form__input {
+	@include font(1.066666em, 300, $color-width);
+
+	width: 100%;
+	height: 33px;
+	margin-bottom: 10px;
+
+	background: none;
+
+	&::placeholder {
+		@include font(1.066666em, 300, $color-width);
+	}
+}
+
+.ampersand-container {
+	width: 200px;
+	height: 300px;
+
+	background-color: #162f31;
+}
+
+.request-form__button {
+	width: 100%;
+	height: 33px;
+	margin-bottom: 30px;
+
+	border-radius: 0.333em;
 }
 
 @import "./media.scss";
