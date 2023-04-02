@@ -13,6 +13,9 @@
 //mixins____________________
 @import "./mixins.scss";
 
+//tamplates____________________
+@import "./tamplates.scss";
+
 //________________/import files________________
 
 html {
@@ -29,6 +32,7 @@ body {
 	width: 100%;
 	height: 80px;
 
+	z-index: 5;
 	background-color: rgba(0, 0, 0, 0.479);
 }
 
@@ -85,17 +89,18 @@ body {
 	align-items: end;
 
 	width: 100%;
-	height: 600px;
+	min-height: 600px;
 
 	//background-color: rgba(88, 25, 25, 0.829);
 }
 
 .intro-container {
 	display: flex;
+	flex-wrap: wrap-reverse;
 	justify-content: space-between;
 	align-items: end;
 	width: 1300px;
-	height: auto;
+	height: 500px;
 
 	//background-color: #275017ce;
 }
@@ -103,11 +108,15 @@ body {
 //________________request-form________________
 .request {
 	@include font(1rem, 300, $color-width);
+	position: relative;
+	bottom: -31px;
 	max-width: 400px;
+	min-height: 450px;
 
 	overflow: hidden;
 	border-radius: 0.333em;
 	background-color: $color-main;
+	z-index: 1;
 }
 
 .request__header {
@@ -120,6 +129,7 @@ body {
 .request__title {
 	@include font(2em, 900, $color-width);
 }
+
 .request-form {
 	max-width: 400px;
 	margin: 0 30px;
@@ -155,24 +165,129 @@ body {
 
 	background: none;
 
+	//.request-form__input::placeholder
 	&::placeholder {
 		@include font(1.066666em, 300, $color-width);
 	}
 }
 
-.ampersand-container {
-	width: 200px;
-	height: 300px;
+//________________buttom form________________
+.request-form__button {
+	//button style with gradient end border radius 5px "0.333em"
+	@extend %button_style;
+	@include font(1.2em, 900, $color-width);
 
-	background-color: #162f31;
+	padding: 0.611em;
+	margin-bottom: 30px;
+	&:hover {
+	}
 }
 
-.request-form__button {
-	width: 100%;
-	height: 33px;
-	margin-bottom: 30px;
+//________________ampersand________________
+.ampersand-container {
+	position: relative;
+	right: 30px;
+	max-width: 450px;
+	max-height: 300px;
+	text-align: end;
+	margin-bottom: 52px;
 
-	border-radius: 0.333em;
+	//background-color: #162f31;
+}
+
+.ampersand-container__subtitle {
+	@include font(1em, 300, $color-width-opasity);
+
+	//background-color: #31161e;
+}
+
+.ampersand-symbol {
+	@include font(11.333em, 900, rgba(255, 255, 255, 0.2));
+	font-family: "Lato", sans-serif;
+	line-height: 0.9;
+
+	max-width: 123;
+	height: 130px;
+
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+
+	//background: #3552428c;
+}
+
+.ampersand-container__title {
+	@include font(6.333em, bold, $color-width-opasity);
+	font-family: "Lato", sans-serif;
+	line-height: 0.91;
+	padding-right: 3px;
+}
+
+/*=============services=============*/
+
+.services {
+	width: 100%;
+
+	margin-top: 50px;
+
+	//background-color: rgb(0, 128, 21);
+}
+
+.services__container {
+	display: flex;
+	flex-wrap: wrap;
+
+	max-width: 1200px;
+	min-height: 300px;
+	margin: 0 auto;
+	padding: 30px 0 0 0;
+
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+}
+
+//________________serveces cards________________
+.serveces-cards {
+	@include font(1em, 300, #000);
+	font-family: "Lato", sans-serif;
+	display: flex;
+
+	flex-direction: column;
+
+	width: (100% / 4);
+
+	min-width: 240px;
+	margin-bottom: 20px;
+	padding-left: 50px;
+}
+
+.serveces-cards__item {
+	flex: 1 1 auto;
+}
+
+.serveces-cards__title {
+	@include font(1.6em, bold, #000);
+
+	margin-bottom: 20px;
+}
+
+.serveces-cards__text {
+	margin-bottom: 20px;
+}
+
+//________________service title________________
+.service__title {
+	@include font(5em, 900, rgba(44, 44, 44, 0.05));
+	font-family: "Lato", sans-serif;
+	line-height: 1;
+	text-align: right;
+
+	display: inline-block;
+	width: 100%;
+	margin-right: 30px;
+	margin-bottom: 13px;
+	pointer-events: none;
 }
 
 @import "./media.scss";

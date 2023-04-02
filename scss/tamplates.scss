@@ -1,23 +1,14 @@
-//mixins____________________
 %action_link {
-	background-color: $color_action;
-}
-
-//стиль input
-%input_tamplates {
-	width: 340px;
-	height: 34px;
-	background: none;
+	background-color: $color-main;
 }
 
 //стиль оранживой кнопки с градиентом
 %button_style {
 	width: 100%;
-	//max-width: 340px;
-	//height: 45px;
+	font-size: 1rem;
 
-	border-radius: 5px;
-	background-image: linear-gradient(to right, #ff903e, #ff2c2c);
+	border-radius: 0.333em;
+	background-image: linear-gradient(to right, $gradient-color);
 }
 
 //Подчеркивание с низу
@@ -30,5 +21,5 @@
 	bottom: 0;
 	left: 0;
 
-	background-color: $color_action;
+	background-color: $color-main;
 }
