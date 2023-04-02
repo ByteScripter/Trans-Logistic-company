@@ -11,6 +11,22 @@
 	background-image: linear-gradient(to right, $gradient-color);
 }
 
+%button_hover-selector {
+}
+
+%button_hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 0%;
+	height: 100%;
+
+	transition: all 0.5s;
+	background-color: $color-fill-button;
+	z-index: 1;
+}
+
 //Подчеркивание с низу
 %underline_link {
 	content: "";
