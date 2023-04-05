@@ -93,24 +93,47 @@ h6 {
 }
 
 /* Beginning styles --------------------*/
-.request-form__button {
+.become-client__btn, .hover-batton, .request-form__button {
   width: 100%;
   font-size: 1rem;
   border-radius: 0.333em;
   background-image: -webkit-gradient(linear, left top, right top, from(#ff903e), to(#ff2c2c));
   background-image: linear-gradient(to right, #ff903e, #ff2c2c);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
-
-.hover-batton {
+.become-client__btn::after, .hover-batton::after, .request-form__button::after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.become-client__btn:hover::after, .hover-batton:hover::after, .request-form__button:hover::after {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0%;
+  width: 100%;
   height: 100%;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #ff2c2c;
-  z-index: 1;
+}
+
+.serveces-cards__link::after {
+  content: "";
+  width: 10px;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #004af2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 html {
@@ -337,10 +360,8 @@ body {
   position: relative;
   padding: 0.611em;
   margin-bottom: 30px;
+  z-index: 1;
   overflow: hidden;
-}
-.request-form__button:hover .hover-batton {
-  width: 100%;
 }
 
 .button-text {
@@ -450,7 +471,30 @@ body {
 }
 
 .serveces-cards__text {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  color: #000;
+  line-height: 1.4em;
+  line-height: 21px;
   margin-bottom: 20px;
+}
+
+.serveces-cards__link {
+  position: relative;
+  color: #004af2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.serveces-cards__link::after {
+  bottom: -9px;
+}
+.serveces-cards__link:hover::after {
+  width: 100%;
+  background-color: #ff2c2c;
+}
+.serveces-cards__link:hover {
+  color: #ff3e2f;
 }
 
 .service__title {
@@ -476,12 +520,8 @@ body {
   margin-top: 50px;
 }
 
-.our-clients__wrap {
-  /*
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #b6080848;
-  */
+.our-clients--map {
+  background: url(../img/background/map.svg) no-repeat 15% 60px;
 }
 
 .our-clients__title {
@@ -502,8 +542,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   min-height: 400px;
 }
@@ -585,6 +625,56 @@ body {
 .about-ceo__text p:nth-child(odd) {
   text-indent: 15px;
   margin-bottom: 15px;
+}
+
+.become-client {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding: 11px 0;
+}
+
+.become-client__btn {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.4em;
+  display: block;
+  width: 212px;
+  height: 50px;
+  margin-right: 40px;
+  padding: 0.611111em 2.5em;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+.love-clients {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #464646;
+  line-height: 1.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  pointer-events: none;
+  background: url(../img/heart.svg) no-repeat center;
 }
 
 @media (max-width: 767px) {

@@ -191,20 +191,15 @@ body {
 
 .request-form__button {
 	//button style with gradient end border radius 5px "0.333em"
-	@extend %button_style;
+	@extend %button_style--aafter--hover;
 	@include font(1.2em, 900, $color-width);
 
 	position: relative;
 	padding: 0.611em;
 	margin-bottom: 30px;
+	z-index: 1;
 
 	overflow: hidden;
-
-	&:hover {
-		.hover-batton {
-			width: 100%;
-		}
-	}
 }
 
 .button-text {
@@ -214,7 +209,7 @@ body {
 
 .hover-batton {
 	//подключение стиля заливкки кнобки при наведении
-	@extend %button_hover;
+	@extend %button_style--aafter--hover;
 }
 
 //________________ampersand________________
@@ -288,7 +283,7 @@ body {
 
 	flex-direction: column;
 
-	width: (100% / 4);
+	width: calc(100% / 4);
 
 	min-width: 240px;
 	margin-bottom: 20px;
@@ -306,7 +301,31 @@ body {
 }
 
 .serveces-cards__text {
+	@include font(1em, normal, #000);
+	//font-family: "Lato";
+	line-height: 21px;
 	margin-bottom: 20px;
+}
+
+.serveces-cards__link {
+	position: relative;
+	color: $color-main;
+
+	transition: all 0.2s;
+
+	&::after {
+		@extend %underline_link;
+		bottom: -9px;
+	}
+
+	&:hover::after {
+		width: 100%;
+		background-color: $color-fill-button;
+	}
+
+	&:hover {
+		color: $color-active-link;
+	}
 }
 
 //________________service title________________
@@ -332,12 +351,8 @@ body {
 	//background-color: #0f4b37;
 }
 
-.our-clients__wrap {
-	/*
-	display: flex;
-	flex-wrap: wrap;
-	background-color: #b6080848;
-	*/
+.our-clients--map {
+	background: url(../img/background/map.svg) no-repeat 15% 60px;
 }
 
 .our-clients__title {
@@ -353,7 +368,7 @@ body {
 
 .our-clients-container {
 	display: flex;
-	flex-wrap: wrap-reverse;
+	flex-wrap: wrap;
 
 	width: 100%;
 	min-height: 400px;
@@ -387,8 +402,6 @@ body {
 	width: 481px;
 	min-width: 300px;
 	flex: 1 1 auto;
-	//min-height: 400px;
-	//margin-left: 10px;
 
 	//background-color: #13c20d94;
 }
@@ -426,6 +439,46 @@ body {
 		text-indent: 15px;
 		margin-bottom: 15px;
 	}
+}
+
+.become-client {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	margin-top: 60px;
+	padding: 11px 0;
+
+	//background-color: tomato;
+}
+
+.become-client__btn {
+	@extend %button_style--aafter--hover;
+	@include font(1.2em, bold, $color-width);
+
+	display: block;
+	width: 212px;
+	height: 50px;
+	margin-right: 40px;
+	padding: 0.611111em 2.5em;
+
+	position: relative;
+
+	overflow: hidden;
+	transition: all 0.5s;
+
+	z-index: 1;
+}
+
+.love-clients {
+	@include font(1.2em, 300, $color-subtitle);
+	display: flex;
+	align-items: center;
+	height: 100%;
+	pointer-events: none;
+
+	background: url(../img/heart.svg) no-repeat center;
 }
 
 @import "./media.scss";
