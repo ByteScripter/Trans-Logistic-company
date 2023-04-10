@@ -345,10 +345,9 @@ body {
 /*=============our clients=============*/
 .our-clients {
 	width: 100%;
-	height: 800px;
+	height: auto;
 	margin-top: 50px;
-
-	//background-color: #0f4b37;
+	margin-bottom: 123px;
 }
 
 .our-clients--map {
@@ -359,7 +358,6 @@ body {
 	@include font(3em, 900, #000);
 	width: 100%;
 	margin-bottom: 40px;
-	//background-color: $color-fill-button;
 }
 
 .selection {
@@ -372,8 +370,6 @@ body {
 
 	width: 100%;
 	min-height: 400px;
-
-	//background-color: #3b4b0f;
 }
 
 .brands {
@@ -382,14 +378,11 @@ body {
 	flex: 1 1 auto;
 	width: calc(100% / 1.7);
 	min-width: 300px;
-
-	//background-color: #4b0f235e;
 }
 
 .brands-logo {
 	margin-right: 10%;
 	margin-bottom: 45px;
-	//background-color: #224b0fe0;
 }
 
 .brands-logo:nth-child(3) {
@@ -402,8 +395,6 @@ body {
 	width: 481px;
 	min-width: 300px;
 	flex: 1 1 auto;
-
-	//background-color: #13c20d94;
 }
 
 .about-ceo__header {
@@ -453,6 +444,8 @@ body {
 	//background-color: tomato;
 }
 
+//________________Our Clients button________________
+
 .become-client__btn {
 	@extend %button_style--aafter--hover;
 	@include font(1.2em, bold, $color-width);
@@ -471,6 +464,7 @@ body {
 	z-index: 1;
 }
 
+//________________love clients________________
 .love-clients {
 	@include font(1.2em, 300, $color-subtitle);
 	display: flex;
@@ -481,4 +475,135 @@ body {
 	background: url(../img/heart.svg) no-repeat center;
 }
 
+/*=============benefits=============*/
+
+.benefits {
+	width: 100%;
+
+	//background-color: rgb(22, 73, 62);
+}
+.wraper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: auto;
+
+	//background-color: tomato;
+}
+
+.benefits-list {
+	max-width: 315px;
+	margin-right: 30px;
+	padding-left: 50px;
+
+	position: relative;
+
+	background-image: linear-gradient(to bottom, #fff 40%, #a5a5a5 40%);
+	background-size: 2px 35px;
+	background-repeat: repeat-y;
+	background-position: left 12px top -4px;
+
+	//background-color: #961717;
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		width: 26px;
+		height: 36px;
+
+		position: absolute;
+		left: 0;
+
+		background-color: #fff;
+		background-repeat: no-repeat;
+	}
+
+	//.benefits-list::before
+	&::before {
+		background-image: url("../img/_ionicons_svg_md-pin-start.svg");
+		top: 0;
+	}
+
+	//.benefits-list::after
+	&::after {
+		background-image: url("../img/_ionicons_svg_md-pin-end.svg");
+		bottom: 0;
+	}
+}
+
+.benefits-list__title {
+	@include font(1.4em, 900, $color-main-text);
+	font-family: "Lato", sans-serif;
+	margin-bottom: 12px;
+}
+
+.benefits-list__text {
+	@include font(1em, 300, #585858);
+	margin-bottom: 33px;
+}
+
+.benefits-image img {
+	width: 100%;
+	max-width: 600px;
+}
+
+/*=============our-team=============*/
+
+.benefits {
+	//padding: 0 3%;
+}
+.aur-teem {
+	//width: 100%;
+}
+
+.aur-teem__title {
+	@include font(3em, 900, $color-main-text);
+	font-family: "Lato", sans-serif;
+	margin-bottom: 50px;
+}
+
+//________________aur teem card________________
+
+.aur-teem__wraper {
+	display: flex;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	//justify-content: center;
+
+	margin-left: -45px;
+}
+.aur-teem-card {
+	flex: 1 1 auto;
+	width: calc(100% / 2);
+	max-width: 370px;
+
+	margin-left: 45px;
+
+	margin-bottom: 35px;
+
+	& img {
+		width: 100%;
+	}
+}
+
+.image__container {
+	margin-bottom: 12px;
+}
+.aur-teem-card__item {
+	max-width: 370px;
+}
+
+.aur-teem-card__title {
+	@include font(1.2em, 900, $color-title-text);
+	font-family: "Lato", sans-serif;
+}
+
+.aur-teem__taxt {
+	@include font(1em, 300, #585858);
+}
+
+.aur-teem-card__address {
+	margin-top: 10px;
+}
 @import "./media.scss";

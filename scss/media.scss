@@ -171,4 +171,19 @@
 	.brands-logo img {
 		max-width: 200px;
 	}
+
+	/*=============benefits=============*/
+	.wraper {
+		flex-wrap: wrap-reverse;
+	}
+
+	.benefits-colum {
+		flex: 1 1 auto;
+		max-width: 100%;
+		margin-top: 60px;
+	}
+
+	.benefits-list {
+		max-width: 100%;
+	}
 }
