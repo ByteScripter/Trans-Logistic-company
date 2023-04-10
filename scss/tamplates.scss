@@ -4,9 +4,14 @@
 
 //стиль оранживой кнопки с градиентом
 %button_style--aafter--hover {
+	text-align: center;
 	width: 100%;
 	font-size: 1rem;
+	color: $color-width;
+	position: relative;
 
+	z-index: 1;
+	overflow: hidden;
 	border-radius: 0.333em;
 	background-image: linear-gradient(to right, $gradient-color);
 	transition: all 0.5s;

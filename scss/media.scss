@@ -186,4 +186,47 @@
 	.benefits-list {
 		max-width: 100%;
 	}
+
+	/*=============our-team=============*/
+
+	.aur-teem__wraper {
+		justify-content: center;
+	}
+
+	.aur-teem-card {
+		flex: 1 1 auto;
+		width: calc(100% / 2.5);
+		max-width: 306px;
+	}
+
+	/*=============mission=============*/
+	.mission {
+		font-size: 4.5em;
+		line-height: 1;
+	}
+
+	.mission-wraper {
+		margin: 0;
+	}
+
+	.mission-container {
+		top: -20px;
+	}
+
+	.mission-container__title {
+		@include font(0.25em, 900, $color-title-text);
+		font-family: inherit;
+	}
+
+	.aur-teem__button {
+		@include font(0.3em, bold, $color-width);
+
+		//padding mast be 12px 45px
+		padding: 0.666em 2.5em;
+	}
+
+	/*=============footer=============*/
+	.footer {
+		background-image: none;
+	}
 }
