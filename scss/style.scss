@@ -76,7 +76,7 @@ body {
 	width: 100%;
 	height: 600px;
 
-	background: url(../img/intro-bg.jpg) no-repeat;
+	background: url("../img/intro-bg.jpg") no-repeat;
 	background-position: center;
 	background-size: cover;
 }
@@ -561,6 +561,7 @@ body {
 	@include font(3em, 900, $color-main-text);
 	font-family: "Lato", sans-serif;
 	margin-bottom: 50px;
+	padding-top: 55px;
 }
 
 //________________aur teem card________________
@@ -584,6 +585,10 @@ body {
 	& img {
 		width: 100%;
 		box-shadow: 10px 5px 13px rgba(0, 0, 0, 0.16);
+	}
+
+	& a {
+		color: #585858;
 	}
 }
 
@@ -702,7 +707,7 @@ body {
 }
 
 .toread__title {
-	@include font(3em, bold, $color-title-text);
+	@include font(3em, 900, $color-title-text);
 	font-family: "Lato", sans-serif;
 	margin-bottom: 48px;
 }
@@ -785,5 +790,53 @@ body {
 	@include font(0.8em, 300, $color-main);
 	margin-left: 20px;
 }
+
+/*=============news page=============*/
+.intro-news {
+	width: 100%;
+	height: 400px;
+
+	background: url("../img/background/intro-news-backround.png") no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+/*=============news article=============*/
+.news-container .news {
+	width: 100%;
+	max-width: 600px;
+	margin-left: 0;
+}
+
+.news-wraper {
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between;
+
+	margin-bottom: 120px;
+	padding-top: 60px;
+}
+
+.news-column {
+	width: 55%;
+}
+
+.back-to-home-button {
+	margin-top: 50px;
+}
+
+.back-to-home-button a {
+	@include font(1.2em, 900, $color-width);
+	@extend %button_style--aafter--hover;
+
+	max-width: 194px;
+	max-height: 50px;
+	padding: 0.666em 2.5em;
+}
+
+.aside-form .request {
+	top: 0;
+}
+
 /*=============media=============*/
 @import "./media.scss";
